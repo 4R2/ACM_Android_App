@@ -80,11 +80,20 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.home) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_camera) {
+            Resources mainFragment = new Resources();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, mainFragment);
+            fragmentTransaction.commit();
+        } else if (id == R.id.nav_gallery) {
+            Resources resources = new Resources();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, resources);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_manage) {
 
